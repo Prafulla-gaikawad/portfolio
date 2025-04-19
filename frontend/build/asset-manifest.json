@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.17d6775c.css",
+    "main.js": "/static/js/main.c0eedb0e.js",
+    "static/media/gofood.png": "/static/media/gofood.f3af0f0c0603d0c139f5.png",
+    "static/media/ecommerce.png": "/static/media/ecommerce.b48efbcd6ebe91a1c163.png",
+    "static/media/ecom5.png": "/static/media/ecom5.555796c940b031ee71d5.png",
+    "static/media/ecom2.png": "/static/media/ecom2.7d26def962f6f60cc9d6.png",
+    "static/media/ecom7.png": "/static/media/ecom7.dd7c3985b4f21f5c2325.png",
+    "static/media/ecom.png": "/static/media/ecom.cfa457ae1850c863fa7b.png",
+    "static/media/ecom1.png": "/static/media/ecom1.e3a12eadaee8251840a7.png",
+    "static/media/ecom14.png": "/static/media/ecom14.a9ec7a74ab68e6e79f20.png",
+    "static/media/ecom9.png": "/static/media/ecom9.6778e0837ab7da905521.png",
+    "static/media/ecom6.png": "/static/media/ecom6.11ae323c518c152185f5.png",
+    "static/media/ecom11.png": "/static/media/ecom11.3ac23e8c507b2303cb21.png",
+    "static/media/ecom10.png": "/static/media/ecom10.ee9f88cf086aeb86030e.png",
+    "static/media/weather.png": "/static/media/weather.7310568e2ae816a10ef7.png",
+    "static/media/ecom15.png": "/static/media/ecom15.c47a8fa533437595a452.png",
+    "static/media/ecom8.png": "/static/media/ecom8.77c4c65fffa0921db761.png",
+    "static/media/ecom12.png": "/static/media/ecom12.34ca9ba663e11e140fe0.png",
+    "static/media/ecom3.png": "/static/media/ecom3.9a2ca6209781bbbf0f74.png",
+    "static/media/ecom4.png": "/static/media/ecom4.305f4342d1e1b6a6490d.png",
+    "static/media/referral.png": "/static/media/referral.2d9e3b584a33392c7d7f.png",
+    "static/media/ecom13.png": "/static/media/ecom13.d8bad70b8dcc2dedd80b.png",
+    "static/media/location.png": "/static/media/location.f277799d4ca62b2206c7.png",
+    "static/media/events.png": "/static/media/events.ac89345ebbf1a0dce264.png",
+    "index.html": "/index.html",
+    "main.17d6775c.css.map": "/static/css/main.17d6775c.css.map",
+    "main.c0eedb0e.js.map": "/static/js/main.c0eedb0e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17d6775c.css",
+    "static/js/main.c0eedb0e.js"
+  ]
+}

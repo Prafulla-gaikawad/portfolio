@@ -158,134 +158,73 @@ const Contact = () => {
       sx={{
         minHeight: "100vh",
         position: "relative",
-        overflow: "hidden",
-        background:
-          "linear-gradient(135deg, rgba(63,81,181,0.05) 0%, rgba(245,0,87,0.05) 100%)",
         width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        paddingLeft: "240px", // Account for sidebar width
-        paddingRight: "24px", // Balance the layout
-      }}
-    >
-      {/* Animated background elements */}
-      <Box
-        sx={{
+        py: 8,
+        overflow: "hidden",
+        background: "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)",
+        borderRadius: "32px",
+        margin: "16px",
+        "&::before": {
+          content: '""',
           position: "absolute",
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          zIndex: 0,
-          overflow: "hidden",
-          width: "100%",
-        }}
-      >
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            style={{
-              position: "absolute",
-              width: Math.random() * 100 + 50,
-              height: Math.random() * 100 + 50,
-              borderRadius: "50%",
-              background: `rgba(${Math.random() * 255}, ${
-                Math.random() * 255
-              }, ${Math.random() * 255}, 0.05)`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, Math.random() * 100 - 50],
-              x: [0, Math.random() * 100 - 50],
-              scale: [1, Math.random() + 0.5],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </Box>
-
+          background:
+            "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)",
+          animation: "pulse 8s infinite",
+          borderRadius: "32px",
+          "@keyframes pulse": {
+            "0%": { transform: "scale(1)" },
+            "50%": { transform: "scale(1.2)" },
+            "100%": { transform: "scale(1)" },
+          },
+        },
+      }}
+    >
       <Container
-        maxWidth={false}
+        maxWidth="lg"
         sx={{
           position: "relative",
           zIndex: 1,
-          py: 4,
-          px: { xs: 2, sm: 4 },
-          width: "100%",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          maxWidth: "1100px !important",
         }}
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
         >
           <Typography
             variant="h2"
             sx={{
-              color: "primary.main",
-              mb: 3,
+              mb: 6,
               textAlign: "center",
               fontWeight: 700,
-              background: "linear-gradient(45deg, #3f51b5, #f50057)",
+              background: "linear-gradient(45deg, #00ff88, #00b4ff)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              textShadow: "0 2px 10px rgba(0,0,0,0.1)",
-              fontSize: { xs: "2.5rem", sm: "3.5rem" },
-              width: "100%",
+              textShadow: "0 2px 10px rgba(0,255,136,0.3)",
             }}
           >
             Let's Connect
           </Typography>
 
-          <Typography
-            variant="h6"
-            sx={{
-              textAlign: "center",
-              mb: 4,
-              color: "text.secondary",
-              width: "100%",
-              fontSize: { xs: "1rem", sm: "1.25rem" },
-            }}
-          >
-            Feel free to reach out to me through any of these channels
-          </Typography>
-
-          <Grid
-            container
-            spacing={6}
-            sx={{
-              width: "100%",
-              justifyContent: "center",
-              alignItems: "stretch",
-            }}
-          >
-            {contactItems.slice(0, 3).map((item, index) => (
-              <Grid item xs={12} sm={4} key={index} sx={{ display: "flex" }}>
+          <Grid container spacing={4} justifyContent="center">
+            {contactItems.map((item, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                  style={{ width: "100%" }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Paper
-                    elevation={3}
+                  <Box
                     sx={{
                       p: 3,
                       height: "100%",
@@ -293,17 +232,32 @@ const Contact = () => {
                       flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "center",
-                      textAlign: "center",
-                      borderRadius: 4,
-                      background: "rgba(255, 255, 255, 0.95)",
+                      background: "rgba(0, 0, 0, 0.2)",
                       backdropFilter: "blur(10px)",
-                      border: "1px solid rgba(255,255,255,0.2)",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderRadius: "24px",
                       transition: "all 0.3s ease",
-                      boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+                      position: "relative",
+                      overflow: "hidden",
+                      "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background: `linear-gradient(45deg, ${item.color}33, transparent)`,
+                        opacity: 0.3,
+                        transition: "all 0.3s ease",
+                        borderRadius: "24px",
+                      },
                       "&:hover": {
+                        background: "rgba(0, 0, 0, 0.3)",
                         transform: "translateY(-5px)",
-                        boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-                        background: "rgba(255, 255, 255, 1)",
+                        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
+                        "&::before": {
+                          opacity: 0.5,
+                        },
                       },
                     }}
                   >
@@ -312,10 +266,11 @@ const Contact = () => {
                       sx={{
                         color: item.color,
                         mb: 2,
-                        p: 2,
+                        background: "rgba(255, 255, 255, 0.1)",
+                        borderRadius: "16px",
                         "&:hover": {
                           transform: "scale(1.1)",
-                          backgroundColor: "rgba(255, 255, 255, 0.1)",
+                          background: "rgba(255, 255, 255, 0.2)",
                         },
                       }}
                     >
@@ -324,124 +279,30 @@ const Contact = () => {
                     <Typography
                       variant="h6"
                       sx={{
-                        fontWeight: 600,
+                        color: "white",
                         mb: 1,
-                        color: "text.primary",
+                        fontWeight: "bold",
+                        textAlign: "center",
+                        textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)",
                       }}
                     >
                       {item.title}
                     </Typography>
-                    <Link
-                      component="button"
-                      onClick={item.action}
+                    <Typography
+                      variant="body1"
                       sx={{
-                        color: "text.secondary",
-                        textDecoration: "none",
-                        fontSize: "0.95rem",
-                        fontWeight: 500,
-                        "&:hover": {
-                          color: item.color,
-                        },
+                        color: "rgba(255, 255, 255, 0.9)",
+                        textAlign: "center",
+                        wordBreak: "break-word",
+                        textShadow: "0 1px 2px rgba(0, 0, 0, 0.2)",
                       }}
                     >
                       {item.value}
-                    </Link>
-                  </Paper>
+                    </Typography>
+                  </Box>
                 </motion.div>
               </Grid>
             ))}
-
-            <Grid
-              container
-              item
-              xs={12}
-              spacing={6}
-              sx={{
-                justifyContent: "center",
-                mt: 0, // Reset margin top since spacing handles it
-              }}
-            >
-              {contactItems.slice(3).map((item, index) => (
-                <Grid
-                  item
-                  xs={12}
-                  sm={6}
-                  md={4}
-                  key={index + 3}
-                  sx={{ display: "flex" }}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                    style={{ width: "100%" }}
-                  >
-                    <Paper
-                      elevation={3}
-                      sx={{
-                        p: 3,
-                        height: "100%",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        textAlign: "center",
-                        borderRadius: 4,
-                        background: "rgba(255, 255, 255, 0.95)",
-                        backdropFilter: "blur(10px)",
-                        border: "1px solid rgba(255,255,255,0.2)",
-                        transition: "all 0.3s ease",
-                        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-                        "&:hover": {
-                          transform: "translateY(-5px)",
-                          boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-                          background: "rgba(255, 255, 255, 1)",
-                        },
-                      }}
-                    >
-                      <IconButton
-                        onClick={item.action}
-                        sx={{
-                          color: item.color,
-                          mb: 2,
-                          p: 2,
-                          "&:hover": {
-                            transform: "scale(1.1)",
-                            backgroundColor: "rgba(255, 255, 255, 0.1)",
-                          },
-                        }}
-                      >
-                        {item.icon}
-                      </IconButton>
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          fontWeight: 600,
-                          mb: 1,
-                          color: "text.primary",
-                        }}
-                      >
-                        {item.title}
-                      </Typography>
-                      <Link
-                        component="button"
-                        onClick={item.action}
-                        sx={{
-                          color: "text.secondary",
-                          textDecoration: "none",
-                          fontSize: "0.95rem",
-                          fontWeight: 500,
-                          "&:hover": {
-                            color: item.color,
-                          },
-                        }}
-                      >
-                        {item.value}
-                      </Link>
-                    </Paper>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
           </Grid>
         </motion.div>
       </Container>

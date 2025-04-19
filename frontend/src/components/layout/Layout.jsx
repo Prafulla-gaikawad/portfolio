@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container } from "@mui/material";
-import Sidebar from "./Sidebar";
+import Navbar from "./Navbar";
 import Footer from "./Footer";
 import AnimatedBackground from "./AnimatedBackground";
 
@@ -9,28 +9,29 @@ const Layout = ({ children }) => {
     <Box
       sx={{
         display: "flex",
+        flexDirection: "column",
         minHeight: "100vh",
         position: "relative",
         overflow: "hidden",
       }}
     >
       <AnimatedBackground />
-      <Sidebar />
+      <Navbar />
       <Box
         component="main"
         sx={{
           flexGrow: 1,
-          p: 3,
-          width: { sm: `calc(100% - 240px)` },
-          ml: { sm: "240px" },
-          transition: "margin 0.3s ease",
+          pt: { xs: 8, sm: 10 },
+          px: 2,
+          position: "relative",
+          zIndex: 1,
         }}
       >
-        <Container maxWidth="lg" sx={{ py: 4 }}>
+        <Container maxWidth="lg" sx={{ py: 2 }}>
           {children}
         </Container>
-        <Footer />
       </Box>
+      <Footer />
     </Box>
   );
 };

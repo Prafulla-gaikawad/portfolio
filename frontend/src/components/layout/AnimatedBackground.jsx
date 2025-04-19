@@ -3,32 +3,13 @@ import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 
 const AnimatedBackground = () => {
-  // Generate random positions for the animated elements
-  const generateRandomPosition = () => {
-    return {
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      scale: 0.5 + Math.random() * 1.5,
-      opacity: 0.1 + Math.random() * 0.3,
-    };
-  };
-
-  // Generate 15 animated elements
-  const elements = Array.from({ length: 15 }, (_, i) => ({
-    id: i,
-    ...generateRandomPosition(),
-    color:
-      i % 5 === 0
-        ? "rgba(63, 81, 181, 0.2)" // Primary color
-        : i % 5 === 1
-        ? "rgba(245, 0, 87, 0.2)" // Secondary color
-        : i % 5 === 2
-        ? "rgba(76, 175, 80, 0.2)" // Success color
-        : i % 5 === 3
-        ? "rgba(255, 152, 0, 0.2)" // Warning color
-        : "rgba(33, 150, 243, 0.2)", // Info color
-    duration: 15 + Math.random() * 30, // Random duration between 15-45 seconds
-  }));
+  const colors = [
+    "rgba(255, 182, 193, 0.1)", // Light Pink
+    "rgba(173, 216, 230, 0.1)", // Light Blue
+    "rgba(144, 238, 144, 0.1)", // Light Green
+    "rgba(255, 218, 185, 0.1)", // Peach
+    "rgba(230, 230, 250, 0.1)", // Lavender
+  ];
 
   return (
     <Box
@@ -36,57 +17,85 @@ const AnimatedBackground = () => {
         position: "fixed",
         top: 0,
         left: 0,
-        width: "100%",
-        height: "100%",
+        right: 0,
+        bottom: 0,
+        zIndex: 0,
         overflow: "hidden",
-        zIndex: -1,
         pointerEvents: "none",
+        background: "linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%)",
       }}
     >
-      {elements.map((element) => (
-        <motion.div
-          key={element.id}
-          style={{
-            position: "absolute",
-            width: "300px",
-            height: "300px",
-            borderRadius: "50%",
-            background: element.color,
-            filter: "blur(40px)",
-            left: `${element.x}%`,
-            top: `${element.y}%`,
-            scale: element.scale,
-            opacity: element.opacity,
-          }}
-          animate={{
-            x: [
-              `${element.x}%`,
-              `${element.x + (Math.random() * 20 - 10)}%`,
-              `${element.x}%`,
-            ],
-            y: [
-              `${element.y}%`,
-              `${element.y + (Math.random() * 20 - 10)}%`,
-              `${element.y}%`,
-            ],
-            scale: [
-              element.scale,
-              element.scale * (0.8 + Math.random() * 0.4),
-              element.scale,
-            ],
-            opacity: [
-              element.opacity,
-              element.opacity * (0.5 + Math.random() * 0.5),
-              element.opacity,
-            ],
-          }}
-          transition={{
-            duration: element.duration,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
+      {[...Array(20)].map((_, i) => {
+        const size = Math.random() * 100 + 50;
+        const rotation = Math.random() * 360;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+
+        return (
+          <motion.div
+            key={i}
+            style={{
+              position: "absolute",
+              width: size,
+              height: size,
+              background: color,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
+              transform: `rotate(${rotation}deg)`,
+              filter: "blur(1px)",
+            }}
+            animate={{
+              y: [0, Math.random() * 100 - 50],
+              x: [0, Math.random() * 100 - 50],
+              scale: [1, Math.random() * 0.5 + 0.5],
+              rotate: [rotation, rotation + 180],
+              borderRadius: [
+                "30% 70% 70% 30% / 30% 30% 70% 70%",
+                "70% 30% 30% 70% / 70% 70% 30% 30%",
+                "30% 70% 70% 30% / 30% 30% 70% 70%",
+              ],
+            }}
+            transition={{
+              duration: Math.random() * 15 + 15,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}
+          />
+        );
+      })}
+      {[...Array(10)].map((_, i) => {
+        const size = Math.random() * 30 + 20;
+        const rotation = Math.random() * 360;
+
+        return (
+          <motion.div
+            key={`small-${i}`}
+            style={{
+              position: "absolute",
+              width: size,
+              height: size,
+              background: "rgba(255, 255, 255, 0.3)",
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              borderRadius: "50%",
+              filter: "blur(0.5px)",
+            }}
+            animate={{
+              y: [0, Math.random() * 50 - 25],
+              x: [0, Math.random() * 50 - 25],
+              scale: [1, Math.random() * 0.3 + 0.7],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}
+          />
+        );
+      })}
     </Box>
   );
 };
