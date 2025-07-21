@@ -25,6 +25,7 @@ import {
   Dashboard as DashboardIcon,
   FilterList as FilterIcon,
   Speed as SpeedIcon,
+  SmartToy as SmartToyIcon,
 } from "@mui/icons-material";
 import ecommerceNew from "../images/ecom.png";
 import ecommerce from "../images/ecommerce.png";
@@ -33,6 +34,7 @@ import weather from "../images/weather.png";
 import referral from "../images/referral.png";
 import location from "../images/location.png";
 import events from "../images/events.png";
+import aidsa from "../images/aidsa.png";
 import { Link as RouterLink } from "react-router-dom";
 
 const Projects = () => {
@@ -40,12 +42,57 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "AI-Mentored DSA Preparation Coach",
+      description:
+        "An AI-powered web platform designed to help users prepare for Data Structures & Algorithms (DSA) interviews. The platform provides guided problem-solving through an AI mentor, personalized learning paths, and real-time feedback — simulating a mentor-led LeetCode-like experience.",
+      image: aidsa,
+      github: "https://github.com/Prafulla-gaikawad/DSA_Preparation_Coach",
+      live: "https://timely-bunny-326f98.netlify.app",
+      tech: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "OpenAI API",
+        "Tailwind CSS",
+        "JWT",
+      ],
+      features: [
+        {
+          icon: <SmartToyIcon />,
+          title: "AI Mentor Integration",
+          description:
+            "Uses OpenAI's GPT-based API to guide users through DSA problems with hints, step-by-step breakdowns, and logic validation.",
+        },
+        {
+          icon: <DashboardIcon />,
+          title: "User Dashboard & Progress Tracker",
+          description:
+            "Personalized dashboard to track solved problems, topic-wise progress, and performance metrics.",
+        },
+        {
+          icon: <CodeIcon />,
+          title: "Problem-Solving Interface",
+          description:
+            "Interactive coding environment with real-time code feedback and problem hints.",
+        },
+        {
+          icon: <CodeIcon />,
+          title: "In-Browser Code Editor",
+          description:
+            "Integrated and fully functional code editor enabling users to write, test, and submit their solutions directly within the app.",
+        },
+      ],
+      role: "Full Stack Developer",
+      type: "Hackathon / Portfolio Project",
+    },
+    {
       title: "Ecommerce Website",
       description:
         "A full-featured ecommerce web application offering a seamless shopping experience. The app includes essential ecommerce features like user authentication, product filtering, shopping cart, secure checkout, and real-time order management.",
       image: ecommerceNew,
       github: "https://github.com/Prafulla-gaikawad/EcommerceNew",
-      live: "https://your-ecommerce-site.com",
+      live: "https://resonant-tiramisu-c0e0f2.netlify.app/",
       tech: [
         "React (Vite)",
         "Tailwind CSS",
@@ -84,6 +131,32 @@ const Projects = () => {
       type: "Personal Project / Portfolio",
     },
     {
+      title: "Referral Platform",
+      description:
+        "A platform for managing and tracking referrals, built with modern web technologies.",
+      image: referral,
+      github: "https://github.com/Prafulla-gaikawad/referal-platform",
+      live: "https://helpful-cajeta-f1a22b.netlify.app",
+      tech: ["React", "Node.js", "MongoDB", "Express"],
+      features: [
+        {
+          icon: <CodeIcon />,
+          title: "Referral Tracking",
+          description: "Track and manage referral processes",
+        },
+        {
+          icon: <StorageIcon />,
+          title: "Data Management",
+          description: "Store and retrieve referral data efficiently",
+        },
+        {
+          icon: <DashboardIcon />,
+          title: "Analytics Dashboard",
+          description: "View referral statistics and performance metrics",
+        },
+      ],
+    },
+    {
       title: "GoFood",
       description:
         "A food delivery application built with MERN stack, featuring user authentication, restaurant listings, and order management.",
@@ -107,32 +180,6 @@ const Projects = () => {
           icon: <DashboardIcon />,
           title: "Order Management",
           description: "Track and manage food orders",
-        },
-      ],
-    },
-    {
-      title: "Referral Platform",
-      description:
-        "A platform for managing and tracking referrals, built with modern web technologies.",
-      image: referral,
-      github: "https://github.com/Prafulla-gaikawad/referal-platform",
-      live: "https://helpful-cajeta-f1a22b.netlify.app",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
-      features: [
-        {
-          icon: <CodeIcon />,
-          title: "Referral Tracking",
-          description: "Track and manage referral processes",
-        },
-        {
-          icon: <StorageIcon />,
-          title: "Data Management",
-          description: "Store and retrieve referral data efficiently",
-        },
-        {
-          icon: <DashboardIcon />,
-          title: "Analytics Dashboard",
-          description: "View referral statistics and performance metrics",
         },
       ],
     },

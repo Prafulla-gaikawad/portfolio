@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.17d6775c.css",
-    "main.js": "/static/js/main.c0eedb0e.js",
+    "main.js": "/static/js/main.ff8c93cc.js",
     "static/media/gofood.png": "/static/media/gofood.f3af0f0c0603d0c139f5.png",
     "static/media/ecommerce.png": "/static/media/ecommerce.b48efbcd6ebe91a1c163.png",
     "static/media/ecom5.png": "/static/media/ecom5.555796c940b031ee71d5.png",
@@ -17,6 +17,7 @@
     "static/media/weather.png": "/static/media/weather.7310568e2ae816a10ef7.png",
     "static/media/ecom15.png": "/static/media/ecom15.c47a8fa533437595a452.png",
     "static/media/ecom8.png": "/static/media/ecom8.77c4c65fffa0921db761.png",
+    "static/media/aidsa.png": "/static/media/aidsa.8c4f9f4d47c57b748473.png",
     "static/media/ecom12.png": "/static/media/ecom12.34ca9ba663e11e140fe0.png",
     "static/media/ecom3.png": "/static/media/ecom3.9a2ca6209781bbbf0f74.png",
     "static/media/ecom4.png": "/static/media/ecom4.305f4342d1e1b6a6490d.png",
@@ -26,10 +27,10 @@
     "static/media/events.png": "/static/media/events.ac89345ebbf1a0dce264.png",
     "index.html": "/index.html",
     "main.17d6775c.css.map": "/static/css/main.17d6775c.css.map",
-    "main.c0eedb0e.js.map": "/static/js/main.c0eedb0e.js.map"
+    "main.ff8c93cc.js.map": "/static/js/main.ff8c93cc.js.map"
   },
   "entrypoints": [
     "static/css/main.17d6775c.css",
-    "static/js/main.c0eedb0e.js"
+    "static/js/main.ff8c93cc.js"
   ]
 }
